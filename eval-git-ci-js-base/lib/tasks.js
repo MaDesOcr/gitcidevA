@@ -8,10 +8,18 @@ function getTasks() {
   return tasks;
 }
 
+function toggleTask(task) {
+    if(task) task.done = !task.done;
+}
+
+function countDone(tasks) {
+    return tasks.filter(t => t.done).length;
+}
 
 function reset() {
   tasks = [];
   nextId = 1;
 }
 
-module.exports = { getTasks, reset };
+module.exports = { getTasks, reset, countDone };
+
